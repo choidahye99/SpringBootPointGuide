@@ -4,19 +4,31 @@ import com.springboot.springproject.dto.MemberDto;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.apache.coyote.Response;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Map;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/rest")
 public class RestApiController {
 
+
+    //private final Logger LOGGER = (Logger) LoggerFactory.getLogger(RestApiController.class);
+
+    @GetMapping("/hello")
+    public  String hello(){
+        //LOGGER.info("hello 메서드가 호출되었습니다.");
+        return "hello";
+    }
+
     @GetMapping("/name")
     public String getName() {
+        //LOGGER.info("getName 메서드가 호출되었습니다.");
         return "Flature";
     }
 
